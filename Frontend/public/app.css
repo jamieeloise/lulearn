@@ -1,0 +1,17 @@
+.games { 
+    position: absolute;
+    top: 50px;
+    margin: 5rem; 
+    display: flex; 
+    justify-content: center;
+    margin-left: 260px;
+}
+
+.title {
+    display: flex; 
+    position: absolute;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+

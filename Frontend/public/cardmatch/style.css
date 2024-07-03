@@ -1,0 +1,225 @@
+.container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+}
+
+header{
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    width: 100%;
+}
+
+#game {
+    display: grid; 
+    grid-template-columns: repeat(4, 160px); 
+    grid-template-rows: repeat(4, 160px); 
+    grid-gap: 10px;
+}
+
+.card{
+    box-shadow: 0 3px 10px rgba(200, 200, 200, 0.9); 
+    border-radius: 10px; 
+    position: relative; 
+    overflow: hidden; 
+    transform-style: preserve-3d; 
+    transition: transform 0.5s; 
+}
+
+.front, .back{
+    height: 100%;
+    width: 100%;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    position: absolute; 
+    backface-visibility: hidden; 
+    transition: transform 0.5s; 
+}
+
+.front{
+    background-image: url("front.jpg");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-color: black; 
+    z-index: 2; 
+}
+
+.back{
+    /* background-color: rgba(126, 230, 126, 0.658); */ 
+    backface-visibility: visible; 
+}
+
+
+.rotated{
+    transform: rotateY(180deg) scale(-1, 1); 
+
+}
+
+#mmg {
+    margin-top: -10px;
+}
+
+
+/* Main Background */
+
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+h1{
+    color: #426696;
+    font-weight: 600; 
+    font-size: 3rem; 
+    opacity: 0.8; 
+}
+h2, p{
+    color: #658ec6; 
+    font-weight: 500;
+    opacity:0.8; 
+}
+h3{ 
+    color: #426696; 
+    font-weight: 600; 
+    opacity: 0.8; 
+}
+
+main {
+    font-family: "Poppins", sans-serif; 
+    min-height: 100vh; 
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb); 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.glass {
+    background: white; 
+    min-height: 90vh; 
+    max-height: 100vh;
+    width: 60%; 
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    border-radius: 2rem;
+    z-index: 3;
+    backdrop-filter: blur(2rem); 
+    /* display: flex; */ 
+
+
+}
+
+.circle1, .circle2 {
+    background: white; 
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+    height: 20rem;
+    width: 20rem; 
+    position: absolute; 
+    border-radius: 50%;
+}
+
+.circle1 { 
+    top: 5%;
+    right: 15%; 
+}
+
+.circle2{ 
+    bottom: 5%;
+    left: 10%; 
+    z-index: 2; 
+}
+
+
+.dashboard {
+    flex: 1; 
+    display: flex; 
+    flex-direction: row;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center; 
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    border-radius: 2rem;
+}
+
+#logo{
+    color: rgb(245, 242, 242); 
+    background-image: linear-gradient(to top, #083da0 0%, #91a2ee 100%);
+    background-size: 100%;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.links{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width: 100%;
+    font-size: 18px;
+}
+
+.links a {
+    color: #658ec6;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px; /* Adjust margin between links */
+}
+
+.user{
+    display: flex; 
+    flex-direction: column;
+    position: relative;
+    justify-content: right;
+    align-items: center;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    
+}
+
+a {
+    color: #658ec6; 
+    display: flex;
+    margin: 2rem 0rem;
+    padding: 1rem 5rem;
+    align-items: center;
+    text-decoration: none;
+  }
+
+
+.games { 
+    position: absolute;
+    top: 50px;
+    margin: 5rem; 
+    display: flex; 
+    justify-content: center;
+    margin-left: 259px;
+}
+
+.title {
+    display: flex; 
+    position: absolute;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+
+#rbtn{
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    background-image: linear-gradient(to top, #80f4f87a 0%, #86e0f0 100%);
+    border: none;
+    color: rgb(255, 255, 255); 
+    font-family: "Poppins", sans-serif; 
+    
+}
+
