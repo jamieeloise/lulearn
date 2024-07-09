@@ -19,16 +19,16 @@ router.post('/login', async (req, res) => {
       return res.status(400).json({ msg: 'Invalid Credentials'});
     }
 
-    const match = await brypt.compare(password, user.password);
+    const match = await bcrypt.compare(password, user.password);
 
     if (!match) {
       return res.status(400).json({ msg: 'Invalid Credentials'}); 
     }
 
     // set up a session 
-    req.sesion.userID = user.id;
+    req.session.userID = user.id;
 
-    res.json({ msg: 'Logged in succsesfully'}); 
+    res.json({ msg: 'Logged in successfully'}); 
   } catch (err) {
     console.error(err.message); 
     res.status(500).send('Server error'); 

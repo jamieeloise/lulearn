@@ -33,9 +33,9 @@ app.use(session({
 
 // set up routes 
 // app.use('/api/users', require('./routes/users')); 
-app.use('/api/users', userRoutes); 
-app.use('/api/auth', authRoutes); 
-app.use('/api/vocab', vocabRoutes); 
+app.use('/users', userRoutes); 
+app.use('/auth', authRoutes); 
+app.use('/vocab', vocabRoutes); 
 
 // pulls from env variable 
 app.listen(process.env.PORT || 3000, () => console.log(`Server running on port 3000`)); // default to port 3000 

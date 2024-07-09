@@ -34,29 +34,25 @@
                     <p>Enter your details below to sign up.</p>
                 </div>
                 <div class="form"></div>
-                    <form action="/login" method="POST"> 
+                    <form id="registerForm" action="#" method="POST"> 
                         <div class="input-group">
                             <div class="input-field" id="nameField">
                                 <i class="fa-solid fa-user"></i>
-                                <input type="text" placeholder="Name">
+                                <input type="text" id="username" placeholder="Username" required>
                             </div>
-            
-                            <div class="input-field">
-                                <i class="fa-solid fa-envelope"></i>
-                                <input type="email" placeholder="Email">
-                            </div>
-            
                             <div class="input-field">
                                 <i class="fa-solid fa-lock"></i>
-                                <input type="password" placeholder="Password">
+                                <input type="password" id="password" placeholder="Password" required>
                             </div>
+                        </div>
+                        <div class="buttons">
+                            <button type="submit" id="topbtn" onclick="console.log('Button Clicked')">Register</button>
                         </div>
                     </form>
                 </div>
-                <div class="buttons">
-                    <button type="submit" id="topbtn">Register</button>
-                    <a href="login.html" id="bottombtn">Existing User? Click Here to Log In!</a>
-                </div>
+            </div>
+            <div class="buttons">
+                <a href="login.html" id="bottombtn">Existing User? Click Here to Log In!</a>
             </div>
         </section>
     </main>
@@ -64,5 +60,30 @@
     <div class="circle2"></div>
     <div class="circle3"></div>
     <div class="circle4"></div>
+    <script src="../js/auth.js"></script>
+    <script type="module">
+        import { register } from '../js/auth.js'; 
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('registerForm'); 
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault(); 
+                    const username = document.getElementById('username').value;
+                    const password = document.getElementById('password').value; 
+                    register(username, password); 
+                }); 
+            } else {
+                console.error('Register form not found'); 
+            }
+        }); 
+
+
+        // document.getElementById('registerForm').addEventListener('submit', function(e) {
+        //     e.preventDefault(); 
+        //     const username = document.getElementById('username').value; 
+        //     const password = document.getElementById('password').value; 
+        //     register(username, password); 
+        // }); 
+    </script>
 </body>
 </html>

@@ -35,26 +35,28 @@
                 </div>
                 
                 <div class="form"></div>
-                    <form action="/login" method="POST"> 
+                    <form id="loginForm" action="#" method="POST"> 
                         <div class="input-group">
                             <div class="input-field">
                                 <i class="fa-solid fa-envelope"></i>
-                                <input type="email" placeholder="Email">
+                                <input type="text" id="username" placeholder="Username" required>
                             </div>
             
                             <div class="input-field">
                                 <i class="fa-solid fa-lock"></i>
-                                <input type="password" placeholder="Password">
+                                <input type="password" id="password" placeholder="Password" required>
                             </div>
                             <div class="text">
                                 <a href="#">Forgotten Password? Click Here!</a> 
                             </div>
                         </div>
+                        <div class="buttons">
+                            <button type="submit" id="topbtn">Login</button>
+                        </div>
                     </form>
-                </div>
-                <div class="buttons">
-                    <button type="submit" id="topbtn">Login</button>
-                    <a href="register.html" id="bottombtn">New User? Click Here to Create an Account!</a>
+                    <div class="buttons">
+                        <a href="register.html" id="bottombtn">New User? Click Here to Create an Account!</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -63,5 +65,22 @@
     <div class="circle2"></div>
     <div class="circle3"></div>
     <div class="circle4"></div>
+    <script src="../js/auth.js"></script>
+    <script type="module">
+        import { login } from '../js/auth.js'; 
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('loginForm'); 
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault(); 
+                    const username = document.getElementById('username').value;
+                    const password = document.getElementById('password').value; 
+                    login(username, password); 
+                }); 
+            } else {
+                console.error('Login form not found'); 
+            }
+        });
+    </script>
 </body>
 </html>
