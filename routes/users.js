@@ -1,13 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs'); 
-// const jwt = require('jsonwebtoken'); 
 const User = require('../models/user'); 
-
-// Define your routes here
-//router.get('/', (req, res) => {
-//  res.send('User route');
-//});
 
 router.post('/register', async (req, res) => {
   const { username, password } = req.body; 

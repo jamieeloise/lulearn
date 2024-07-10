@@ -3,11 +3,6 @@ const router = express.Router();
 //const Vocab = require('..models/Vocab');
 //const VocabList = require('../models/vocabList');
 
-// Define your routes here
-// router.get('/', (req, res) => {
-//   res.send('Vocab route');
-// });
-
 // check user is logged in 
 const isLoggedIn = (req, res, next) => {
   if (req.session.userID) {
