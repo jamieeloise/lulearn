@@ -36,6 +36,7 @@ async function login(username, password) {
             headers: {
                 'Content-Type': 'application/json', 
             },
+            // serialise JSON body 
             body: JSON.stringify({ username, password }), 
         }); 
 
@@ -45,6 +46,8 @@ async function login(username, password) {
             console.log('Login Successful: ', data); 
             // store session information 
             sessionStorage.setItem('userLoggedIn', 'true'); 
+            // store username for use on index.html 
+            sessionStorage.setItem('username', username); 
             window.location.href = 'index.html'; // redirect to main dashboard 
         } else {
             console.error('Login Failed: ', data.msg); 
