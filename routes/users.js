@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs'); 
 const User = require('../models/user'); 
+const Vocab = require('../models/vocabWords');
 
 router.post('/register', async (req, res) => {
   const { username, password } = req.body; 
@@ -21,7 +22,21 @@ router.post('/register', async (req, res) => {
     const salt = await bcrypt.genSalt(10); 
     user.password = await bcrypt.hash(password, salt); 
 
+    //const hashedPassword = await bcrypt.hash(req.body.password, 10);
+
     await user.save(); 
+
+    // create individual vocab list for the user 
+    // separate lists for each user for sake of assigning points/rankings to words 
+    const allVocabWords = await Vocab.find({}); 
+    const userVocab = allVocabWords.map(word => ({
+      user: user._id,
+      word: word.word, 
+      translation: word.translation,
+      score: 0,
+      rank: 'New Word'
+    })); 
+    await Vocab.insertMany(userVocab); 
 
     res.json({ msg: 'User registered successfully'}); 
   } catch (err) {
@@ -29,7 +44,5 @@ router.post('/register', async (req, res) => {
     res.status(500).send({ msg: 'Server error' }); 
   }
 }); 
-
-
 
 module.exports = router;

@@ -1,0 +1,405 @@
+[
+    
+{
+    "word": "el/la",
+    "translation": "the"
+},
+{
+    "word": "de",
+    "translation": "of"
+},
+{
+    "word": "que",
+    "translation": "that/which"
+},
+{
+    "word": "y",
+    "translation": "and"
+},
+{
+    "word": "a",
+    "translation": "to/at"
+},
+{
+    "word": "en",
+    "translation": "in/on"
+},
+{
+    "word": "un",
+    "translation": "a/an"
+},
+{
+    "word": "ser",
+    "translation": "to be"
+},
+{
+    "word": "se",
+    "translation": "oneself"
+},
+{
+    "word": "no",
+    "translation": "no"
+},
+{
+    "word": "haber",
+    "translation": "to have"
+},
+{
+    "word": "por",
+    "translation": "by/for/through"
+},
+{
+    "word": "con",
+    "translation": "with"
+},
+{
+    "word": "su",
+    "translation": "his/her/their/your"
+},
+{
+    "word": "para",
+    "translation": "for/to"
+},
+{
+    "word": "como",
+    "translation": "like/as"
+},
+{
+    "word": "estar",
+    "translation": "to be"
+},
+{
+    "word": "tener",
+    "translation": "to have"
+},
+{
+    "word": "todo",
+    "translation": "all/every"
+},
+{
+    "word": "pero",
+    "translation": "but/yet"
+},
+{
+    "word": "mas",
+    "translation": "more"
+    
+},
+{
+    "word": "hacer",
+    "translation": "to do/to make"
+},
+{
+    "word": "o",
+    "translation": "or"
+},
+{
+    "word": "poder",
+    "translation": "can"
+},
+{
+    "word": "decir",
+    "translation": "to tell/say"
+},
+{
+    "word": "ese/esa",
+    "translation": "that"
+},
+{
+    "word": "si",
+    "translation": "if/whether"
+},
+{
+    "word": "me",
+    "translation": "me"
+},
+{
+    "word": "ya",
+    "translation": "already/still"
+},
+{
+    "word": "ver",
+    "translation": "to see"
+},
+{
+    "word": "porque",
+    "translation": "because"
+},
+{
+    "word": "dar",
+    "translation": "to give"
+},
+{
+    "word": "cuando",
+    "translation": "when"
+},
+{
+    "word": "el",
+    "translation": "he"
+},
+{
+    "word": "muy",
+    "translation": "very"
+},
+{
+    "word": "sin",
+    "translation": "without"
+},
+{
+    "word": "vez",
+    "translation": "time"
+},
+{
+    "word": "mucho",
+    "translation": "much/many"
+},
+{
+    "word": "saber",
+    "translation": "to know"
+},
+{
+    "word": "que",
+    "translation": "what/which"
+},
+{
+    "word": "sobre",
+    "translation": "on top of/over"
+},
+{
+    "word": "mi",
+    "translation": "my"
+},
+{
+    "word": "alguno",
+    "translation": "translation"
+},
+{
+    "word": "mismo",
+    "translation": "same"
+},
+{
+    "word": "yo",
+    "translation": "I"
+},
+{
+    "word": "tambien",
+    "translation": "also"
+},
+{
+    "word": "hasta",
+    "translation": "until/even"
+},
+{
+    "word": "ano",
+    "translation": "year"
+},
+{
+    "word": "dos",
+    "translation": "two"
+},
+{
+    "word": "querer",
+    "translation": "to want/love"
+},
+
+{
+    "word": "tiempo",
+    "translation": "time"
+},
+{
+    "word": "dia",
+    "translation": "day"
+},
+{
+    "word": "persona",
+    "translation": "person"
+},
+{
+    "word": "hombre",
+    "translation": "man"
+},
+{
+    "word": "mujer",
+    "translation": "woman"
+},
+{
+    "word": "mano",
+    "translation": "hand"
+},
+{
+    "word": "parte",
+    "translation": "part"
+},
+{
+    "word": "pais",
+    "translation": "country"
+},
+{
+    "word": "lugar",
+    "translation": "place"
+},
+{
+    "word": "trabajo",
+    "translation": "job/work"
+},
+{
+    "word": "vida",
+    "translation": "life"
+},
+{
+    "word": "momento",
+    "translation": "moment"
+},
+{
+    "word": "forma",
+    "translation": "form/shape"
+},
+{
+    "word": "caso",
+    "translation": "case"
+},
+{
+    "word": "grupo",
+    "translation": "group"
+},
+{
+    "word": "problema",
+    "translation": "problem"
+},
+{
+    "word": "punto",
+    "translation": "point"
+},
+{
+    "word": "gobierno",
+    "translation": "government"
+},
+{
+    "word": "empresa",
+    "translation": "company"
+},
+{
+    "word": "numero",
+    "translation": "number"
+},
+{
+    "word": "mundo",
+    "translation": "world"
+},
+{
+    "word": "estado",
+    "translation": "state"
+},
+{
+    "word": "familia",
+    "translation": "family"
+},
+{
+    "word": "cabeza",
+    "translation": "head"
+},
+{
+    "word": "sistema",
+    "translation": "system"
+},
+{
+    "word": "ojo",
+    "translation": "eye"
+},
+{
+    "word": "informacion",
+    "translation": "information"
+},
+{
+    "word": "noche",
+    "translation": "night"
+},
+{
+    "word": "agua",
+    "translation": "water"
+},
+{
+    "word": "cosa",
+    "translation": "thing"
+},
+{
+    "word": "desarrollo",
+    "translation": "development"
+},
+{
+    "word": "semana",
+    "translation": "week"
+},
+{
+    "word": "hora",
+    "translation": "hour"
+},
+{
+    "word": "nino",
+    "translation": "child"
+},
+{
+    "word": "relacion",
+    "translation": "relationship"
+},
+{
+    "word": "ley",
+    "translation": "law"
+},
+{
+    "word": "camino",
+    "translation": "path/road"
+},
+{
+    "word": "proceso",
+    "translation": "process"
+},
+{
+    "word": "idea",
+    "translation": "idea"
+},
+{
+    "word": "historia",
+    "translation": "history"
+},
+{
+    "word": "juego",
+    "translation": "game"
+},
+{
+    "word": "palabra",
+    "translation": "word"
+},
+{
+    "word": "resultado",
+    "translation": "result"
+},
+{
+    "word": "casa",
+    "translation": "house"
+},
+{
+    "word": "amigo",
+    "translation": "friend"
+},
+{
+    "word": "ejemplo",
+    "translation": "example"
+},
+{
+    "word": "libro",
+    "translation": "book"
+},
+{
+    "word": "precio",
+    "translation": "price"
+},
+{
+    "word": "calle",
+    "translation": "street"
+},
+{
+    "word": "valor",
+    "translation": "value"
+}
+]
