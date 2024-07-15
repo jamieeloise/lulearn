@@ -26,7 +26,7 @@ router.post('/register', async (req, res) => {
 
     await user.save(); 
 
-    // create individual vocab list for the user 
+    // create individual vocab list for the user upon registration
     // separate lists for each user for sake of assigning points/rankings to words 
     const allVocabWords = await Vocab.find({}); 
     const userVocab = allVocabWords.map(word => ({
@@ -36,6 +36,9 @@ router.post('/register', async (req, res) => {
       score: 0,
       rank: 'New Word'
     })); 
+    // testing userID and user vocab generation 
+    //console.log('User ID: ', user._id); 
+    console.log('User Vocab: ', userVocab); 
     await Vocab.insertMany(userVocab); 
 
     res.json({ msg: 'User registered successfully'}); 

@@ -1,23 +1,50 @@
+const API_BASE_URL = 'http://localhost:3000';
 let isPaused = false;
 let firstPick; 
 let wordPairs = []; 
 let matches; 
+let userId; // to find the vocab collection associated with user 
 
 async function fetchWordPairs() {
     try {
-        const response = await fetch('vocab.json');
-        wordPairs = await response.json();
-        return wordPairs;
+        const userId = sessionStorage.getItem('userId'); 
+        if (!userId) {
+            throw new Error('User ID not found'); 
+        }
+        //successful user id retrieval **DEBUGGING** 
+        console.log('app.js User ID: ', userId); 
+        const url = `${API_BASE_URL}/vocab/user/${userId}`; 
+        console.log('Fetching from URL: ', url); 
+        const response = await fetch(`${API_BASE_URL}/vocab/user/${userId}`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch vocab words'); 
+        }
+        const wordPairs = await response.json();
+        return wordPairs.map(item => ({
+            spanish: item.word,
+            english: item.translation,
+            id: item._id
+        })); 
     } catch (error) {
-        console.error('Error fetching word pairs:', error);
+        console.error('Error fetching vocabulary words', error);
         throw error;
     }
 }
 
 async function main() {
     try {
+        const userId = sessionStorage.getItem('userId'); 
+        if (!userId) {
+            document.getElementById('game').innerHTML = '<p>Please log in!</p>';
+        
+        }
         const wordPairs = await fetchWordPairs();
         console.log("Word pairs: ", wordPairs); 
+
+        if (wordPairs.length === 0) {
+            document.getElementById('game').innerHTML = '<p> No vocab words available.</p>'; 
+            return;
+        }
 
         function getRandomWordPairs(numPairs) {
             const shuffledPairs = wordPairs.slice().sort(() => Math.random() - 0.5); 
@@ -27,30 +54,32 @@ async function main() {
                 const pair = shuffledPairs.pop(); 
                 uniquePairs.add(pair); 
             }
-
             
-            return shuffledPairs.slice(0, numPairs); 
+           // return shuffledPairs.slice(0, numPairs); 
+           return Array.from(uniquePairs); //? 
         }
 
         const selectedWordPairs = getRandomWordPairs(8);
+        // displayWords(selectedWordPairs); ???
 
         const gameContainer = document.getElementById('game');
 
         selectedWordPairs.forEach(pair => {
-            const spanishCard = createCard(pair.spanish);
-            const englishCard = createCard(pair.english);
+            const spanishCard = createCard(pair.word, pair.id, 'spanish');
+            const englishCard = createCard(pair.translation, pair.id, 'english');
 
             gameContainer.appendChild(spanishCard);
             gameContainer.appendChild(englishCard);
 
-        
+        // displayWords(selectedWordPairs); ???
+
         });
     } catch (error) {
         console.error('An error occurred:', error);
     }
 }
 
-function createCard(content) {
+function createCard(content, id) {
     const card = document.createElement('div');
     card.classList.add('card');
 
@@ -62,7 +91,9 @@ function createCard(content) {
     back.textContent = content; 
     console.log(content); 
 
-    card.setAttribute('data-word', content); 
+    card.setAttribute('data-word', content);
+    card.setAttribute('data-id', id);  
+    card.setAttribute('data-type', type); // english or spanish
 
     card.appendChild(front); 
     card.appendChild(back); 
@@ -181,7 +212,12 @@ const resetGame = () => {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-    main();
+    userId = sessionStorage.getItem('userId'); 
+    if(!userId) { 
+        document.getElementById('game').innerHTML = '<p>Please log in!</p>';
+    } else {
+        main();
+    }
 }); 
 
 // need to randomise placement of the cards in the grid // 

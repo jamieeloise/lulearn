@@ -1,16 +1,42 @@
 const express = require('express');
 const router = express.Router();
-//const Vocab = require('..models/Vocab');
-//const VocabList = require('../models/vocabList');
+const Vocab = require('../models/vocabWords');
 
 // check user is logged in 
 const isLoggedIn = (req, res, next) => {
-  if (req.session.userID) {
+  // userID value: undefined here **DEBUGGING** 
+  console.log('vocab.js userId: ', req.session.userId);
+  if (req.session.userId) {
+    // debugging 
+    console.log('User is logged in:' , req.session.userId); 
     next(); 
   } else {
-    req.status(401).json({ msg: 'Not authorised '});
+    // This is displaying because userID not defined **DEBUGGING**  
+    console.log('User not authorized'); 
+    res.status(401).json({ msg: 'Not authorised '});
   }
 }; 
+
+// fetch vocab list for specific user 
+router.get ('/user/:userId', isLoggedIn, async (req, res) => {
+  try {
+    const userId = req.params.userId; 
+    console.log('Fetching vocab for user: ', userId); 
+    // find vocab list for specific user
+
+    const vocabWords = await Vocab.find({ user: userId });
+    // check to see if vocab words have been fetched 
+    if (!vocabWords.length) { 
+      console.log('No vocab list found.'); 
+    }
+    // print if successfully fetched 
+    console.log('Vocab words found: ', vocabWords); 
+    res.json(vocabWords); 
+  } catch (error) {
+    console.error('Error fetching vocab', error); 
+    res.status(500).json({ msg: 'Server error'}); 
+  }
+})
 
 // router.post('/', isLoggedIn, async (req, res) => {
 //   const { word, scoreIncrease } = req.body;

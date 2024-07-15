@@ -48,6 +48,10 @@ async function login(username, password) {
             sessionStorage.setItem('userLoggedIn', 'true'); 
             // store username for use on index.html 
             sessionStorage.setItem('username', username); 
+            // store usedID for vocab list retrieval 
+            if (data.userId) {
+                sessionStorage.setItem('userId', data.userId); 
+            }
             window.location.href = 'index.html'; // redirect to main dashboard 
         } else {
             console.error('Login Failed: ', data.msg); 
