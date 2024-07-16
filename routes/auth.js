@@ -20,7 +20,7 @@ router.post('/login', async (req, res) => {
     }
 
     // set up a session 
-    // **DEBUGGING** this was userID not userId ?? 
+    // **DEBUGGING** this was accidentally userID not userId ?? 
     // **DEBUGGING** Changing it doesn't seem to have made a difference??
     req.session.userId = user.id;
 

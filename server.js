@@ -1,7 +1,6 @@
 const express = require('express'); 
 const cors = require('cors');
 const session = require('express-session'); 
-// const connectDB = require('/config/db');
 const userRoutes = require('./routes/users'); 
 const authRoutes = require('./routes/auth'); 
 const vocabRoutes = require('./routes/vocab'); 
@@ -32,7 +31,6 @@ app.use(session({
 }));
 
 // set up routes 
-// app.use('/api/users', require('./routes/users')); 
 app.use('/users', userRoutes); 
 app.use('/auth', authRoutes); 
 app.use('/vocab', vocabRoutes); 
